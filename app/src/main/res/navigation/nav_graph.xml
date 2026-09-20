@@ -9,7 +9,7 @@
         android:id="@+id/FirstFragment"
         android:name="com.q17pd.lostfound.FirstFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/fragment_profile">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
