@@ -1,5 +1,5 @@
 <h1 align="center">
-  LostNFound-api
+  LostNFound-mobile
   <br>
   <a href="https://github.com/17partDissections/LostNFound"><img src="https://img.shields.io/badge/LostNFound-mobile-0066ff"/></a>
   <a href="https://github.com/17partDissections/LostNFound-website"><img src="https://img.shields.io/badge/LostNFound-website-00ff00"/></a>
