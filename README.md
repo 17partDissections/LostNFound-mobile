@@ -1,1 +1,16 @@
-# LostNFound
+<h1 align="center">
+  LostNFound-api
+  <br>
+  <a href="https://github.com/17partDissections/LostNFound"><img src="https://img.shields.io/badge/LostNFound-mobile-0066ff"/></a>
+  <a href="https://github.com/17partDissections/LostNFound-website"><img src="https://img.shields.io/badge/LostNFound-website-00ff00"/></a>
+  <a href="https://github.com/17partDissections/LostNFound-api"><img src="https://img.shields.io/badge/LostNFound-api-990000"/></a>
+</h1>
+
+## Список контрибьюторов
+- **17partDissections**
+- **Badi243**
+- **notebookej-creator**
+----
+Данная ветвь проекта LostNFound отвечает за создание мобильного приложения.
+----
+[Стек](stack_LostNFound-mobile.md)
