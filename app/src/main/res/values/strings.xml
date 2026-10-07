@@ -11,4 +11,14 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name_registration">Зарегистрироваться</string>
+    <string name="name_enter_A">Уже есть аккаунт? Войти</string>
+    <string name="name_password">Пароль</string>
+    <string name="name_emailphone">Email или номер телефона</string>
+    <string name="name_login">Логин</string>
+    <string name="name_Username">Имя пользователя</string>
+    <string name="name_createAkk">Создать аккаунт</string>
+    <string name="name_Exit">Выйти</string>
+    <string name="name_Enter">Войти</string>
+    <string name="name_NotRegister">Вы не авторизованы</string>
 </resources>
