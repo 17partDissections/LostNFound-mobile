@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, new FeedFragment())
+                    .replace(R.id.nav_host_fragment, new FeedFragment())
                     .commit();
         }
 
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (selectedFragment != null) {
                     getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.fragment_container, selectedFragment)
+                            .replace(R.id.nav_host_fragment, selectedFragment)
                             .commit();
                 }
             }

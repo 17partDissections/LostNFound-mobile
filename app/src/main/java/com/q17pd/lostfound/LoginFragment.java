@@ -9,6 +9,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation; // <-- Добавь этот импорт
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -30,6 +31,7 @@ public class LoginFragment extends Fragment {
         TextView goToRegisterText = view.findViewById(R.id.tv_go_to_register);
 
         goToRegisterText.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(R.id.action_loginFragment_to_registerFragment);
         });
 
         loginButton.setOnClickListener(v -> {
@@ -40,7 +42,7 @@ public class LoginFragment extends Fragment {
                 Toast.makeText(requireContext(), "Введите данные", Toast.LENGTH_SHORT).show();
             } else {
                 if (validateUser(login, password)) {
-                    startVerificationProcess(login);
+                    startVerificationProcess(v, login);
                 } else {
                     Toast.makeText(requireContext(), "Неверный логин или пароль", Toast.LENGTH_SHORT).show();
                 }
@@ -52,8 +54,9 @@ public class LoginFragment extends Fragment {
         return login.equals("admin") && pass.equals("123456");
     }
 
-    private void startVerificationProcess(String email) {
+    private void startVerificationProcess(View view, String email) {
         Toast.makeText(requireContext(), "Код отправлен на " + email, Toast.LENGTH_LONG).show();
 
+        Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_profileFragment);
     }
 }

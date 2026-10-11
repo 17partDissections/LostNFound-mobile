@@ -33,35 +33,4 @@
             android:text="@string/name_registration"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layoutUser"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@android:drawable/ic_menu_view" />
-
-        <TextView
-            android:id="@+id/tvUserName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/name_Username"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btnLogout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="@string/name_Exit"
-            style="@style/Widget.MaterialComponents.Button.TextButton" />
-    </LinearLayout>
-
 </FrameLayout>

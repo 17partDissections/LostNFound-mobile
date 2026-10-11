@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,9 +14,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 public class RegisterFragment extends Fragment {
 
     public RegisterFragment() {
+        // Можно оставить пустым или использовать super(R.layout.fragment_register)
     }
 
     @Override
@@ -29,18 +31,20 @@ public class RegisterFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        EditText etName = view.findViewById(R.id.et_Reg_Login);
-        EditText etEmail = view.findViewById(R.id.et_Reg_Email);
-        EditText etPassword = view.findViewById(R.id.et_Reg_Password);
+        TextInputEditText etName = view.findViewById(R.id.etRegUsername);
+        TextInputEditText etEmail = view.findViewById(R.id.et_Reg_Email);
+        TextInputEditText etPassword = view.findViewById(R.id.et_Reg_Password);
         Button btnRegister = view.findViewById(R.id.btn_register_submit);
         TextView tvBackToLogin = view.findViewById(R.id.tv_back_to_login);
 
+
         tvBackToLogin.setOnClickListener(v -> {
             Navigation.findNavController(v).popBackStack();
-
         });
 
+
         btnRegister.setOnClickListener(v -> {
+
             String name = etName.getText().toString().trim();
             String email = etEmail.getText().toString().trim();
             String password = etPassword.getText().toString().trim();
