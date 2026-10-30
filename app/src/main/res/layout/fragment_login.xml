@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
-        android:text="Нет аккаунта? Зарегистрироваться"
+        android:text="Нет аккаунта? Зарегистрироваться!"
         android:textColor="?attr/colorPrimary" />
 
     <!-- !!!Андрей и Даниил оставляю заглушку для проверки пользователя!!! -->

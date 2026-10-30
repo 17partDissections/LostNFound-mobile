@@ -22,8 +22,6 @@ public class UserFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_user, container, false);
-
-        // Инициализируем элементы
         TextView tvName = view.findViewById(R.id.tvUserName);
         TextView tvEmail = view.findViewById(R.id.tvUserEmail);
         TextView tvPhone = view.findViewById(R.id.tvUserPhone);

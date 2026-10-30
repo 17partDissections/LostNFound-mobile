@@ -19,7 +19,6 @@ import com.google.android.material.textfield.TextInputEditText;
 public class RegisterFragment extends Fragment {
 
     public RegisterFragment() {
-        // Можно оставить пустым или использовать super(R.layout.fragment_register)
     }
 
     @Override
