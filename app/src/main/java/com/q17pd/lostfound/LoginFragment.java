@@ -1,5 +1,6 @@
 package com.q17pd.lostfound;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,7 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation; // <-- Добавь этот импорт
+import androidx.navigation.Navigation;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -30,9 +31,15 @@ public class LoginFragment extends Fragment {
         Button loginButton = view.findViewById(R.id.btn_login_submit);
         TextView goToRegisterText = view.findViewById(R.id.tv_go_to_register);
 
-        goToRegisterText.setOnClickListener(v -> {
-            Navigation.findNavController(v).navigate(R.id.action_loginFragment_to_registerFragment);
-        });
+        Intent intent = requireActivity().getIntent();
+        if (intent.getBooleanExtra(AuthActivity.EXTRA_OPEN_REGISTER, false)) {
+            intent.removeExtra(AuthActivity.EXTRA_OPEN_REGISTER);
+            Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_registerFragment);
+            return;
+        }
+
+        goToRegisterText.setOnClickListener(v ->
+                Navigation.findNavController(v).navigate(R.id.action_loginFragment_to_registerFragment));
 
         loginButton.setOnClickListener(v -> {
             String login = Objects.requireNonNull(loginEditText.getText()).toString().trim();
@@ -40,23 +47,17 @@ public class LoginFragment extends Fragment {
 
             if (login.isEmpty() || password.isEmpty()) {
                 Toast.makeText(requireContext(), "Введите данные", Toast.LENGTH_SHORT).show();
+            } else if (validateUser(login, password)) {
+                // TODO (Андрей, Даниил): здесь будет проверка кода / запрос на сервер
+                Session.login(requireContext(), login);
+                requireActivity().finish();
             } else {
-                if (validateUser(login, password)) {
-                    startVerificationProcess(v, login);
-                } else {
-                    Toast.makeText(requireContext(), "Неверный логин или пароль", Toast.LENGTH_SHORT).show();
-                }
+                Toast.makeText(requireContext(), "Неверный логин или пароль", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private boolean validateUser(String login, String pass) {
         return login.equals("admin") && pass.equals("123456");
-    }
-
-    private void startVerificationProcess(View view, String email) {
-        Toast.makeText(requireContext(), "Код отправлен на " + email, Toast.LENGTH_LONG).show();
-
-        Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_profileFragment);
     }
 }

@@ -1,22 +1,23 @@
 <resources>
-    <string name="app_name">Lost+Found</string>
+    <string name="app_name">LostFound</string>
     <string name="action_settings">Настройки</string>
 
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
 
-    <string name="feed">feed</string>
-    <string name="add_an_ad">add_an_ad</string>
-    <string name="profile">profile</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="feed">Лента</string>
+    <string name="add_an_ad">Добавить объявление</string>
+    <string name="profile">Профиль</string>
+    <string name="next">Далее</string>
+    <string name="previous">Назад</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="name_registration">Зарегистрироваться</string>
+
+    <string name="name_registration">Регистрация</string>
     <string name="name_enter_A">Уже есть аккаунт? Войти</string>
     <string name="name_password">Пароль</string>
-    <string name="name_emailphone">Email или номер телефона</string>
+    <string name="name_emailphone">Email</string>
     <string name="name_login">Логин</string>
-    <string name="name_Username">Имя пользователя</string>
+    <string name="name_Username">Имя</string>
     <string name="name_createAkk">Создать аккаунт</string>
     <string name="name_Exit">Выйти</string>
     <string name="name_Enter">Войти</string>

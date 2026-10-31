@@ -2,9 +2,7 @@ package com.q17pd.lostfound;
 
 import android.os.Bundle;
 import android.util.Patterns;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,14 +14,12 @@ import androidx.navigation.Navigation;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.util.Objects;
+
 public class RegisterFragment extends Fragment {
 
     public RegisterFragment() {
-    }
-
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_register, container, false);
+        super(R.layout.fragment_register);
     }
 
     @Override
@@ -31,34 +27,36 @@ public class RegisterFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         TextInputEditText etName = view.findViewById(R.id.etRegUsername);
+        TextInputEditText etLogin = view.findViewById(R.id.et_Reg_Login);
         TextInputEditText etEmail = view.findViewById(R.id.et_Reg_Email);
         TextInputEditText etPassword = view.findViewById(R.id.et_Reg_Password);
         Button btnRegister = view.findViewById(R.id.btn_register_submit);
-        TextView tvBackToLogin = view.findViewById(R.id.tv_back_to_login);
+        Button btnBackToLogin = view.findViewById(R.id.tv_back_to_login);
 
-
-        tvBackToLogin.setOnClickListener(v -> {
-            Navigation.findNavController(v).popBackStack();
-        });
-
+        btnBackToLogin.setOnClickListener(v ->
+                Navigation.findNavController(v).popBackStack());
 
         btnRegister.setOnClickListener(v -> {
+            String name = Objects.requireNonNull(etName.getText()).toString().trim();
+            String login = Objects.requireNonNull(etLogin.getText()).toString().trim();
+            String email = Objects.requireNonNull(etEmail.getText()).toString().trim();
+            String password = Objects.requireNonNull(etPassword.getText()).toString().trim();
 
-            String name = etName.getText().toString().trim();
-            String email = etEmail.getText().toString().trim();
-            String password = etPassword.getText().toString().trim();
-
-            if (validateInputs(name, email, password)) {
+            if (validateInputs(name, login, email, password)) {
+                // TODO: отправить данные регистрации на сервер
                 Toast.makeText(requireContext(), "Регистрация успешна!", Toast.LENGTH_SHORT).show();
-
                 Navigation.findNavController(v).popBackStack();
             }
         });
     }
 
-    private boolean validateInputs(String name, String email, String pass) {
+    private boolean validateInputs(String name, String login, String email, String pass) {
         if (name.isEmpty()) {
             showError("Введите имя");
+            return false;
+        }
+        if (login.isEmpty()) {
+            showError("Введите логин");
             return false;
         }
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {

@@ -1,9 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Base.Theme.LostFound" parent="Theme.Material3.DayNight.NoActionBar">
-        </style>
-            <style name="CircleImage">
-                <item name="cornerSize">50%</item>
-    </style>
+    <style name="Base.Theme.LostFound" parent="Theme.Material3.DayNight.NoActionBar" />
 
     <style name="Theme.LostFound" parent="Base.Theme.LostFound" />
+
+    <style name="CircleImage">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>

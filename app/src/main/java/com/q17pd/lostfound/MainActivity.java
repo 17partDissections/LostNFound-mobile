@@ -1,7 +1,8 @@
 package com.q17pd.lostfound;
 
 import android.os.Bundle;
-import androidx.activity.EdgeToEdge;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -9,8 +10,6 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.tabs.TabLayout;
-import com.q17pd.lostfound.databinding.ActivityMainBinding;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,39 +18,48 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        View root = findViewById(R.id.main);
+        ViewCompat.setOnApplyWindowInsetsListener(root, (v, insets) -> {
+            Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(bars.left, bars.top, bars.right, bars.bottom);
+            return insets;
+        });
+
         TabLayout tabLayout = findViewById(R.id.myTabLayout);
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.layoutUser, new FeedFragment())
-                    .commit();
+            show(new FeedFragment());
         }
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                Fragment selectedFragment = null;
-                int position = tab.getPosition();
-
-                if (position == 0) selectedFragment = new FeedFragment();
-                else if (position == 1) selectedFragment = new AddFragment();
-                else if (position == 2) selectedFragment = new ProfileFragment();
-                if (selectedFragment != null) {
-                    getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.registerFragment, selectedFragment)
-                            .commit();
+                switch (tab.getPosition()) {
+                    case 0:
+                        show(new FeedFragment());
+                        break;
+                    case 1:
+                        show(new AddFragment());
+                        break;
+                    case 2:
+                        show(new ProfileFragment());
+                        break;
                 }
             }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-
             }
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-
             }
         });
+    }
+
+    private void show(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit();
     }
 }

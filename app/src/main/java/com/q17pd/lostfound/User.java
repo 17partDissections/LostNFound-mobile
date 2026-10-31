@@ -17,4 +17,8 @@ public class User {
     public String getPhone() { return phone; }
     public String getUserId() { return userId; }
     public String getName() { return name; }
+
+    public String getAvatarUrl() {
+        return null;
+    }
 }

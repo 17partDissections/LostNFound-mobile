@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="24dp">
 
+    <!-- Режим гостя -->
     <LinearLayout
         android:id="@+id/layoutGuest"
         android:layout_width="match_parent"
@@ -15,9 +17,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
             android:text="@string/name_NotRegister"
-            android:textSize="20sp"
-            android:layout_marginBottom="32dp"/>
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btnSignIn"
@@ -27,10 +29,34 @@
 
         <Button
             android:id="@+id/btnSignUp"
+            style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@string/name_registration"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+            android:text="@string/name_registration" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutUser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:text="Имя пользователя" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/name_Exit" />
     </LinearLayout>
 </FrameLayout>
