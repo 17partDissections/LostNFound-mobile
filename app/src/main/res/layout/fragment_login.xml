@@ -23,13 +23,15 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:hint="Логин или Email"
-        app:startIconDrawable="@android:drawable/ic_menu_myplaces">
+        app:startIconDrawable="@drawable/ic_flag">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
+            android:drawableTint="#FFFFFF"
+            android:inputType="textEmailAddress"
+            android:textColorLink="#00FFFF" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -53,7 +55,8 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginTop="24dp"
-        android:text="Войти" />
+        android:text="Войти"
+        android:textColorLink="#00ffff" />
 
     <TextView
         android:id="@+id/tv_go_to_register"
@@ -63,7 +66,7 @@
         android:layout_marginTop="16dp"
         android:padding="8dp"
         android:text="Нет аккаунта? Зарегистрироваться!"
-        android:textColor="?attr/colorPrimary" />
+        android:textColor="#00ffff" />
 
     <!-- !!!Андрей и Даниил оставляю заглушку для проверки пользователя!!! -->
     <!--

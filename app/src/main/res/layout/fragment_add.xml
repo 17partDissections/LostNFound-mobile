@@ -14,6 +14,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:text="@string/add_an_ad"
+            android:textColorLink="#00FFFF"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -21,7 +22,8 @@
             android:id="@+id/btnSelectPhotos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Выбрать фотографии" />
+            android:text="Выбрать фотографии"
+            android:textColorLink="#00FFFF" />
 
         <ImageView
             android:id="@+id/ivPhotoPreview"
@@ -42,7 +44,8 @@
             android:hint="Описание предмета"
             android:importantForAutofill="no"
             android:inputType="textMultiLine"
-            android:lines="4" />
+            android:lines="4"
+            android:textColorLink="#00FFFF" />
 
         <EditText
             android:id="@+id/etLocation"
@@ -52,14 +55,16 @@
             android:hint="Где найдено (местоположение)"
             android:importantForAutofill="no"
             android:inputType="text"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:textColorLink="#00FFFF" />
 
         <Button
             android:id="@+id/btnSubmit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Опубликовать" />
+            android:text="Опубликовать"
+            android:textColorLink="#00FFFF" />
 
     </LinearLayout>
 </ScrollView>

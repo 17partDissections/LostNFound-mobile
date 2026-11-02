@@ -59,7 +59,8 @@
                 android:id="@+id/et_Reg_Email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:textColorLink="#00ffff" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -74,7 +75,8 @@
                 android:id="@+id/et_Reg_Password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textColorLink="#00FFFF" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -82,13 +84,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="12dp"
-            android:text="@string/name_registration" />
+            android:text="@string/name_registration"
+            android:textColorLink="#00FFFF" />
 
         <Button
             android:id="@+id/tv_back_to_login"
             style="@style/Widget.Material3.Button.TextButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/name_enter_A" />
+            android:text="@string/name_enter_A"
+            android:textColorLink="#00FFFF" />
     </LinearLayout>
 </ScrollView>
