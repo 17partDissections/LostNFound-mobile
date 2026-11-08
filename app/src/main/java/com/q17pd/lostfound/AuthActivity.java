@@ -11,12 +11,10 @@ import androidx.core.view.WindowInsetsCompat;
 public class AuthActivity extends AppCompatActivity {
 
     public static final String EXTRA_OPEN_REGISTER = "open_register";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
-
         View root = findViewById(R.id.auth_root);
         ViewCompat.setOnApplyWindowInsetsListener(root, (v, insets) -> {
             Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.ime());

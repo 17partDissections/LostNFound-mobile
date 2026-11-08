@@ -22,16 +22,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:hint="Логин или Email"
-        app:startIconDrawable="@drawable/ic_flag">
+        android:hint="Номер телефона"
+        app:startIconDrawable="@android:drawable/ic_menu_call">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableTint="#FFFFFF"
-            android:inputType="textEmailAddress"
-            android:textColorLink="#00FFFF" />
+            android:inputType="phone" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -55,8 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginTop="24dp"
-        android:text="Войти"
-        android:textColorLink="#00ffff" />
+        android:text="Войти" />
 
     <TextView
         android:id="@+id/tv_go_to_register"
@@ -66,18 +63,6 @@
         android:layout_marginTop="16dp"
         android:padding="8dp"
         android:text="Нет аккаунта? Зарегистрироваться!"
-        android:textColor="#00ffff" />
-
-    <!-- !!!Андрей и Даниил оставляю заглушку для проверки пользователя!!! -->
-    <!--
-    <LinearLayout
-        android:id="@+id/verification_code_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="gone">
-        ... поля для ввода 4-6 цифр ...
-    </LinearLayout>
-    -->
+        android:textColor="?attr/colorPrimary" />
 
 </LinearLayout>

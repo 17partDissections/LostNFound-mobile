@@ -31,7 +31,7 @@
                 android:id="@+id/etRegUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName|textCapWords" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -39,13 +39,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:hint="@string/name_login">
+            android:hint="Фамилия">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_Reg_Login"
+                android:id="@+id/et_Reg_Surname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
+                android:inputType="textPersonName|textCapWords" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -53,14 +53,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:hint="@string/name_emailphone">
+            android:hint="Номер телефона">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_Reg_Email"
+                android:id="@+id/et_Reg_Phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:textColorLink="#00ffff" />
+                android:inputType="phone" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -75,8 +74,7 @@
                 android:id="@+id/et_Reg_Password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:textColorLink="#00FFFF" />
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -84,15 +82,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="12dp"
-            android:text="@string/name_registration"
-            android:textColorLink="#00FFFF" />
+            android:text="@string/name_registration" />
 
         <Button
             android:id="@+id/tv_back_to_login"
             style="@style/Widget.Material3.Button.TextButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/name_enter_A"
-            android:textColorLink="#00FFFF" />
+            android:text="@string/name_enter_A" />
     </LinearLayout>
 </ScrollView>

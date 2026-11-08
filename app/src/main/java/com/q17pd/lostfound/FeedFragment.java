@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 public class FeedFragment extends Fragment {
 
     private RecyclerView recyclerView;
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -22,8 +21,6 @@ public class FeedFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.recyclerViewFeed);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        // TODO: recyclerView.setAdapter(...) когда появится адаптер ленты
-
         return view;
     }
 }
