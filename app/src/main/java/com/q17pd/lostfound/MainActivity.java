@@ -2,15 +2,17 @@ package com.q17pd.lostfound;
 
 import android.os.Bundle;
 import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
+
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
-
+    private TabLayout tabLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(bars.left, bars.top, bars.right, bars.bottom);
             return insets;
         });
-        TabLayout tabLayout = findViewById(R.id.myTabLayout);
+        tabLayout = findViewById(R.id.myTabLayout);
+
         if (savedInstanceState == null) {
             show(new FeedFragment());
         }
@@ -47,6 +50,12 @@ public class MainActivity extends AppCompatActivity {
             public void onTabReselected(TabLayout.Tab tab) {
             }
         });
+    }
+    public void openFeed() {
+        TabLayout.Tab feedTab = tabLayout.getTabAt(0);
+        if (feedTab != null) {
+            feedTab.select();
+        }
     }
     private void show(Fragment fragment) {
         getSupportFragmentManager().beginTransaction()

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,59 +13,71 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="@string/add_an_ad"
-            android:textColorLink="@color/cyan_base"
-            android:textSize="24sp"
+            android:text="Новое объявление"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnSelectPhotos"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Выбрать фотографии"
-            android:textColorLink="#00FFFF" />
-
-        <ImageView
-            android:id="@+id/ivPhotoPreview"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="?attr/colorSurfaceVariant"
-            android:contentDescription="Предпросмотр фото"
-            android:scaleType="centerCrop" />
+            android:text="Добавьте минимум 3 фото: спереди, сзади и сбоку. Если у вещи есть особенности: трещины или надписи, добавьте и их."
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:textSize="14sp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/llPhotos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddPhoto"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Добавить фото" />
+
+        <TextView
+            android:id="@+id/tvPhotoStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:textSize="13sp" />
 
         <EditText
             android:id="@+id/etDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:gravity="top"
-            android:hint="Описание предмета"
-            android:importantForAutofill="no"
-            android:inputType="textMultiLine"
-            android:lines="4"
-            android:textColorLink="#00FFFF" />
+            android:hint="Описание вещи"
+            android:inputType="textCapSentences|textMultiLine"
+            android:minLines="3" />
 
         <EditText
             android:id="@+id/etLocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Где найдено (местоположение)"
-            android:importantForAutofill="no"
-            android:inputType="text"
-            android:minHeight="48dp"
-            android:textColorLink="#00FFFF" />
+            android:layout_marginTop="8dp"
+            android:hint="Где найдено"
+            android:inputType="textCapSentences" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSubmit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Опубликовать"
-            android:textColorLink="#00FFFF" />
-
+            android:layout_marginTop="20dp"
+            android:text="Опубликовать" />
     </LinearLayout>
 </ScrollView>
