@@ -2,4 +2,17 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="cyan_base">#4FD1C5</color>
+    <color name="background"> #121212</color>
+    <color name="kartochki">#1E1E1E</color>
+    <color name="text_primary">#E2E8F0</color>
+    <color name="text_NonPrimary">#94A3B8</color>
+    <color name="border">#2D3748</color>
+    <color name="background_L"> #F8FAFC</color>
+    <color name="kartochki_L">#FFFFFF</color>
+    <color name="text_primary_L">#0F172A</color>
+    <color name="text_NonPrimary_L">#64748B</color>
+    <color name="border_L">#E2E8F0</color>
+
 </resources>

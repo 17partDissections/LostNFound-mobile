@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:text="@string/add_an_ad"
-            android:textColorLink="#00FFFF"
+            android:textColorLink="@color/cyan_base"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -31,7 +31,7 @@
             android:layout_height="200dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:background="#EEEEEE"
+            android:background="?attr/colorSurfaceVariant"
             android:contentDescription="Предпросмотр фото"
             android:scaleType="centerCrop" />
 
